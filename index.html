@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logo Animation</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .parentDiv {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      .wrapper {
+        width: 100%;
+        max-width: 1080px;
+      }
+
+      #top,
+      #bottom {
+        transform-box: fill-box;
+      }
+
+      #top {
+        transform-origin: center 890px;
+        animation: top 2s linear infinite alternate;
+      }
+
+      #bottom {
+        transform-origin: 110px 80px;
+        animation: bottom 2s linear infinite alternate;
+      }
+
+      @keyframes top {
+        0%,
+        25% {
+          transform: rotate(0deg) translate(0px, 0px) scaleY(1);
+        }
+
+        75%,
+        100% {
+          transform: rotate(-39deg) translate(-48px, -200px) scaleY(0.62);
+        }
+      }
+
+      @keyframes bottom {
+        0%,
+        25% {
+          transform: rotate(0deg) translateX(0px);
+        }
+
+        75%,
+        100% {
+          transform: rotate(-41deg) translateX(40px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parentDiv">
+      <div class="wrapper">
+        <svg
+          width="100%"
+          min-height="0"
+          viewBox="0 0 1857 1070"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="Logo">
+            <g id="before">
+              <path
+                id="mid"
+                d="M1820.3 148.184L919.559 891.03L747.293 1039.25L617.725 1039.25C605.634 1039.25 593.953 1034.87 584.845 1026.92L554.353 1000.3C545.215 992.327 539.972 980.79 539.972 968.661V891.03L747.293 717.772L1587.64 37.5527C1592.98 33.2296 1599.64 30.8709 1606.51 30.8709H1754.11C1761.61 30.8709 1768.6 34.6956 1772.64 41.0171L1824.42 121.978C1829.87 130.499 1828.1 141.748 1820.3 148.184Z"
+                fill="#009FF7"
+              />
+              <path
+                id="bottom"
+                d="M594.738 1030.08L553.455 997.844C544.792 991.081 539.972 982.161 539.972 972.893L539.972 888.25L1758.36 888.25L1825.53 950.375C1827.17 951.889 1828.1 953.977 1828.1 956.207L1828.1 1016.27C1828.1 1028.97 1817.8 1039.25 1805.1 1039.25L1774.67 1039.25L1744.39 1039.25L1186.59 1039.25L623.676 1039.25C612.711 1039.25 602.235 1035.93 594.738 1030.08Z"
+                fill="#009FF7"
+              />
+              <path
+                id="top"
+                d="M741.972 30.75H610.888C600.984 30.75 591.45 34.5183 584.223 41.2901L549.777 73.5637C543.521 79.4245 539.972 87.6138 539.972 96.1857V536.25V972.314C539.972 980.886 543.521 989.076 549.777 994.936L584.223 1027.21C591.45 1033.98 600.984 1037.75 610.888 1037.75H741.972C746.39 1037.75 749.972 1034.17 749.972 1029.75V534.25V38.75C749.972 34.3317 746.39 30.75 741.972 30.75Z"
+                fill="#009FF7"
+              />
+            </g>
+          </g>
+        </svg>
+      </div>
+    </div>
+  </body>
+</html>
