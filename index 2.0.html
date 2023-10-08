@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clip Ver.</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .parentDiv {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      .wrapper {
+        width: 100%;
+        max-width: 1080px;
+      }
+
+      #top,
+      #bottom {
+        transform-box: fill-box;
+      }
+
+      #top {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        animation: top 4s linear infinite;
+      }
+
+      @keyframes top {
+        0%,
+        25% {
+          opacity: 1;
+          clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+
+        50%,
+        90% {
+          opacity: 1;
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+
+      #mid {
+        transform-box: fill-box;
+        transform-origin: 104px 105px;
+        transform: rotate(-39.5deg);
+        animation: bottom 4s linear infinite;
+      }
+
+      @keyframes mid {
+        0%,
+        25% {
+          opacity: 1;
+          clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+        }
+
+        50%,
+        90% {
+          opacity: 1;
+          clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+
+      #bottom {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        animation: bottom 4s linear infinite;
+      }
+
+      @keyframes bottom {
+        0%,
+        25% {
+          opacity: 1;
+          clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%);
+        }
+
+        50%,
+        90% {
+          opacity: 1;
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parentDiv">
+      <div class="wrapper">
+        <svg
+          width="100%"
+          min-height="0"
+          viewBox="0 0 1618 1070"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            id="bottom"
+            d="M80.321 1030.08L39.0375 997.844C30.3752 991.081 25.5549 982.161 25.5549 972.893L25.5549 888.25L1243.94 888.25L1311.11 950.375C1312.75 951.889 1313.68 953.977 1313.68 956.207L1313.68 1016.27C1313.68 1028.97 1303.38 1039.25 1290.68 1039.25L1260.26 1039.25L1229.98 1039.25L672.176 1039.25L109.258 1039.25C98.2934 1039.25 87.8179 1035.93 80.321 1030.08Z"
+            fill="#009FF7"
+          />
+          <path
+            id="top"
+            d="M227.555 30.75H96.4706C86.5663 30.75 77.033 34.5183 69.8055 41.2901L35.3595 73.5637C29.1043 79.4245 25.5549 87.6138 25.5549 96.1857V536.25V972.314C25.5549 980.886 29.1043 989.076 35.3595 994.936L69.8055 1027.21C77.033 1033.98 86.5663 1037.75 96.4706 1037.75H227.555C231.973 1037.75 235.555 1034.17 235.555 1029.75V534.25V38.75C235.555 34.3317 231.973 30.75 227.555 30.75Z"
+            fill="#009FF7"
+          />
+          <path
+            id="mid"
+            d="M1543.32 1040.93L391.891 1039.76L148.505 1039.15L48.9287 956.246C39.6369 948.51 33.4627 937.67 31.5495 925.732L25.145 885.768C23.2258 873.792 26.5775 861.571 34.3378 852.249L84.0079 792.587L354.193 792.081L1435.24 806.982C1442.11 807.077 1448.74 809.527 1454.02 813.923L1567.45 908.357C1573.22 913.158 1576.14 920.568 1575.2 928.013L1563.19 1023.43C1561.93 1033.44 1553.41 1040.94 1543.32 1040.93Z"
+            fill="#009FF7"
+          />
+        </svg>
+      </div>
+    </div>
+  </body>
+</html>
